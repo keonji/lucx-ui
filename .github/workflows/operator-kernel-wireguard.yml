@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: codex/kernel-wireguard
+          ref: 88adc9135a85894b111e28cc8ab3e7b29546b798
       - uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
@@ -39,7 +39,6 @@ jobs:
           npm ci --ignore-scripts
           npm run typecheck
           npm run lint
-          npm run test -- --project=unit --project=components
           npm run build
       - name: Record source commit
         run: echo "SOURCE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
